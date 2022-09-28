@@ -1,0 +1,241 @@
+// 缩放
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.animate_scale {
+    animation: scale 1.5s ease-in-out infinite;
+}
+
+// 上下抖动动画
+@keyframes bounce{
+    0%, 20%, 53%, 100% {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        transform: translateZ(0);
+    }
+    40%, 43% {
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        transform: translate3d(0,-30px,0) scaleY(1.1);
+    }
+    70% {
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        transform: translate3d(0,-15px,0) scaleY(1.05);
+    }
+    80% {
+        transition-timing-function: cubic-bezier(.215,.61,.355,1);
+        transform: translateZ(0) scaleY(.95);
+    }
+    90% {
+        transform: translate3d(0,-4px,0) scaleY(1.02);
+    }
+}
+.animate_bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+    transform-origin: center bottom;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+// 旋转
+.animate_rotate {
+    animation: rotate 1.5s linear;
+}
+@keyframes rubberBand{
+    0% {
+        transform: scaleX(1);
+    }
+    30% {
+        transform: scale3d(1.25,.75,1);
+    }
+    40% {
+        transform: scale3d(.75,1.25,1);
+    }
+    50% {
+        transform: scale3d(1.15,.85,1);
+    }
+    65% {
+        transform: scale3d(.95,1.05,1);
+    }
+    75% {
+        transform: scale3d(1.05,.95,1);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+// 拉伸
+.animate_rubberBand {
+    animation: rubberBand 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+// 向下淡入
+.animate_fadeInDown {
+    animation: fadeInDown 1.5s ease-in-out;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,100%,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+//向上淡入
+.animate_fadeInUp {
+    animation: fadeInUp 1.5s ease-in-out; 
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+// 向右淡入
+.animate_fadeInLeft {
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+// 向左淡入
+.animate_fadeInRight {
+    animation: fadeInRight 1.5s ease-in-out;
+}
+
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotateX(-20deg);
+        animation-timing-function: ease-in;
+    }
+    60% {
+        transform: perspective(400px) rotateX(10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: perspective(400px) rotateX(-5deg);
+    }
+    100% {
+        transform: perspective(400px);
+    }
+}
+// X轴翻转
+.animate_flipInX {
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+    animation: flipInX 1.5s ease-in-out;
+}
+@keyframes flipInY {
+    0% {
+        transform: perspective(400px) rotateY(90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotateY(-20deg);
+        animation-timing-function: ease-in;
+    }
+    60% {
+        transform: perspective(400px) rotateY(10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: perspective(400px) rotateY(-5deg);
+    }
+    100% {
+        transform: perspective(400px);
+    }
+}
+// Y轴翻转
+.animate_flipInY {
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+    animation: flipInY 1.5s ease-in-out;
+}
+
+@keyframes hinge {
+    0% {
+        animation-timing-function: ease-in-out;
+    }
+    20%, 60% {
+        transform: rotate(80deg);
+        animation-timing-function: ease-in-out;
+    }
+    40%, 80% {
+        transform: rotate(60deg);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0,700px,0);
+        opacity: 0;
+    }
+}
+// 悬挂掉落
+.animate_hinge {
+    animation-duration: 2s;
+    animation: hinge 1.5s ease-in-out;
+    transform-origin: top left;
+}
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(.3,.3,.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+// 放大淡入
+.animate_zoomIn {
+    animation: zoomIn 1.5s ease-in-out;
+}

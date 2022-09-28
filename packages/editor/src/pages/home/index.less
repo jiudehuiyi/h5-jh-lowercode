@@ -1,0 +1,59 @@
+.homeWrapper {
+  display: flex;
+  height: 100%;
+  .content {
+    flex: 1;
+    .logoTip {
+      padding-top: 100px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .logo {
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 30px;
+        .logoText {
+          font-weight: bold;
+          color: #284080;
+        }
+      }
+      .desc {
+        display: flex;
+        font-size: 16px;
+        line-height: 2;
+        width: 500px;
+      }
+    }
+    .operation {
+      margin-top: 30px;
+      text-align: center;
+      .card {
+        display: inline-block;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        border-radius: 6px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+        font-size: 56px;
+        border: 1px solid #f0f0f0;
+        margin-right: 30px;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+        }
+        div {
+          margin-top: 10px;
+          font-size: 20px;
+          color: #284080;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
